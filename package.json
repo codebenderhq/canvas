@@ -1,0 +1,15 @@
+{
+  "name": "@codebenderhq/canvas",
+  "version": "0.0.3",
+  "repository": "git://github.com/codebenderhq/canvas.git",
+  "description": "Building the present has never been easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rawk",
+  "license": "MPL-2.0",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  }
+}
