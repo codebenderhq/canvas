@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
- 
+import './src/style/index.css'
 
 
 
