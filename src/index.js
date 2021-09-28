@@ -1,16 +1,12 @@
-import * as styles from './style/index.css'
+import ReactDOM from 'react-dom'
+import Splash from './components/splash'
 
-const bye = () => {
 
+const app = (El) => {
+    ReactDOM.render(<El></El>, document.getElementById("app"))
 }
+ 
 
+const canvas = {app, Splash}
 
-const hello = () => {
-
-
-}
-
-
-const package = {hello, bye,styles}
-
-export default package;
+export default canvas;
