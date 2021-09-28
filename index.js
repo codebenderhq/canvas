@@ -1,4 +1,4 @@
-import canvas from './src';
+import {app, Splash} from './src';
 import './src/style/index.css';
 
-export default canvas;
+export default {app, Splash};

@@ -7,6 +7,6 @@ const app = (El) => {
 }
  
 
-const canvas = {app, Splash}
+ 
 
-export default canvas;
+export default {app, Splash};
