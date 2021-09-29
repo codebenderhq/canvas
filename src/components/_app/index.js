@@ -4,4 +4,5 @@ const app = (El) => {
     ReactDOM.render(<El></El>,document.getElementById("app"))
 }
  
-export default {app};
+
+export default app;

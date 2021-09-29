@@ -1,11 +1,7 @@
-import ReactDOM from 'react-dom'
 import Splash from './components/splash'
-// import App from './components/app'
+import MainApp from './components/app'
+import app from './components/_app'
  
 
-const App = (El) => {
-    ReactDOM.render(<El></El>, document.getElementById("app"))
-}
- 
 
-export default {App, Splash};
+export default {MainApp,Splash,app};

@@ -1,9 +1,9 @@
 {
   "name": "@codebenderhq/canvas",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "repository": "git://github.com/codebenderhq/canvas.git",
   "description": "Building the present has never been easier",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
