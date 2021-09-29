@@ -1,4 +1,4 @@
-import {app, Splash} from './src';
+import {App, Splash} from './src';
 
 
-export default {app, Splash};
+export default {App, Splash};
