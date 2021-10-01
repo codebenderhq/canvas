@@ -1,8 +1,7 @@
-# Canvas Package
-
 # The Canvas Of The Web
 
-This works best with parcel as it is a super compiler
+- This works best with parcel as it is a super compiler
+- Dcoumentation is really limted at the moment
 
 ## Requirements
 
@@ -60,7 +59,7 @@ This is still in development so the imports are limited
 when working with tailwindcss you need to include tailwind into your [CSS](https://tailwindcss.com/docs/installation#include-tailwind-in-your-css) , import the below in your root js file to include the CSS in your project
 
 ```bash
-@codebenderhq/canvas/src/style/index.css
+@codebenderhq/canvas/src/theme/{themeName}/style/index.css
 ```
 
 if there are some custom components you would like to use private to you you can create your own CSS file including tailwindcss like [so](https://tailwindcss.com/docs/installation#include-tailwind-in-your-css) 
@@ -69,7 +68,7 @@ if there are some custom components you would like to use private to you you can
 
 The best place to get your hands dirty from new to old you are all welcomed
 
-Since this is a new project, and is still early anything and everything is a great first thing to do, as time goes this will be updated to be more accessible without having to ask questions
+Since this is a new project, and is still early, anything and everything is a great first thing to do, as time goes this will be updated to be more accessible without having to ask questions
 
 ### Contact
 
@@ -77,4 +76,4 @@ if you run into any problems from setup to just a stupid question
 
 you can contact [@codebenderhq](https://twitter.com/codebenderhq)
 
-FYI: First time maintainer
+FYI: first time maintainer
