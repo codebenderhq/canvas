@@ -1,6 +1,6 @@
 {
   "name": "@codebenderhq/canvas",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": "git://github.com/codebenderhq/canvas.git",
   "description": "Building the present has never been easier",
   "main": "./src/index.js",
