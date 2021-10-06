@@ -2,6 +2,8 @@ import { Sauveur } from "../src/";
 // import MainApp from '@codebenderhq/canvas/src/theme/sauveur/components/app'
 import "../src/theme/sauveur/style/index.css";
 
+fetch('/api').then( async(res) => console.log(await res.json()))
+
 Sauveur.app(() => (
     <Sauveur.Structure>
         <div className="w-full h-auto">hello worlr</div>
