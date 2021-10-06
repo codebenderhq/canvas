@@ -1,3 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+
+.input-style{
+    @apply bg-transparent appearance-none outline-none;
+}
 @import "tailwindcss/utilities";

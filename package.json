@@ -4,8 +4,10 @@
   "repository": "git://github.com/codebenderhq/canvas.git",
   "description": "Building the present has never been easier",
   "main": "./src/index.js",
+  "source": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel",
+    "build": "parcel build --dist-dir docs"
   },
   "author": "Rawk",
   "license": "MPL-2.0",
@@ -18,7 +20,9 @@
     "react-router-dom": "^5.3.0"
   },
   "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
     "autoprefixer": "^10.3.6",
+    "parcel": "^2.0.0-rc.0",
     "postcss": "^8.3.8",
     "tailwindcss": "^2.2.16"
   }
