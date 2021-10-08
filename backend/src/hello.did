@@ -8,6 +8,7 @@ type Profile = Profile_2;
 
 type Product_2 = record {
     "name": text;
+    "brand": text;
     "description": text;
     "price" : float32;
     "quantity" : int32;
