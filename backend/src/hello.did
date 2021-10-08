@@ -23,4 +23,6 @@ service : {
     "update": (text,Profile_2) -> ();
     "get_product": (text) -> (Product_2) query;
     "update_product": (text,Product_2) -> ();
+    "remove_product": (text) -> ();
+    "product_exist": (text) -> (bool) query;
 }

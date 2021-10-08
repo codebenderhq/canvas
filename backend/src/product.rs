@@ -39,3 +39,23 @@ fn update_product(id:String, product: Product) {
     // profile_store.insert(id, principal_id.clone());
     product_store.insert(id, product);
 }
+
+#[update]
+fn remove_product(id:String) {
+    // let principal_id = ic_cdk::caller();
+    // let id_store = storage::get_mut::<IdStore>();
+    let product_store = storage::get_mut::<ProductStore>();
+
+    // profile_store.insert(id, principal_id.clone());
+    product_store.remove(&id);
+}
+
+#[query]
+fn product_exist(id: String) -> bool{
+
+    let store = storage::get::<ProductStore>();
+
+    let is_product = store.contains_key(&id);
+
+    return is_product;
+}
