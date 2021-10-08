@@ -4,3 +4,19 @@ node_modules
 .parcel-cache
 /canvas.iml
 /dist/
+
+
+
+# Mac OSX temporary files
+.DS_Store
+**/.DS_Store
+
+# dfx temporary files
+.dfx/
+
+target/
+
+.env
+.env.development
+
+Cargo.lock

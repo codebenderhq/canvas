@@ -3,6 +3,18 @@
 - This works best with parcel as it is a super compiler
 - Dcoumentation is really limted at the moment
 
+## Getting Started
+```bash
+# Starts the replica, running in the background
+dfx start --background
+
+# Deploys your canisters to the replica and generates your candid interface
+dfx deploy
+```
+### To Do
+
+- create a package branch   "main": "./dist/index.js",
+
 ## Requirements
 
 *if you note any new ones create a PR updating the [readme.md](http://readme.md) file*
