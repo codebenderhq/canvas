@@ -5,10 +5,22 @@ type Profile_2 = record {
 };
 type Profile = Profile_2;
 
+
+type Product_2 = record {
+    "name": text;
+    "description": text;
+    "price" : float32;
+    "quantity" : int32;
+};
+type Product = Product_2;
+
+
  
 service : {
     "greeting": (text) -> (text) query;
     "leaving": (text) -> (text) query;
     "get": (text) -> (Profile_2) query;
     "update": (text,Profile_2) -> ();
+    "get_product": (text) -> (Product_2) query;
+    "update_product": (text,Product_2) -> ();
 }

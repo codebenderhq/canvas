@@ -2,7 +2,7 @@
   "canisters": {
     "hello": {
       "build": "cargo build --target wasm32-unknown-unknown --package hello --release",
-      "candid": "src/hello/src/hello.did",
+      "candid": "backend/src/hello.did",
       "wasm": "target/wasm32-unknown-unknown/release/hello.wasm",
       "type": "custom"
     },
