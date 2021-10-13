@@ -11,6 +11,9 @@ dfx start --background
 # Deploys your canisters to the replica and generates your candid interface
 dfx deploy
 ```
+
+### urls
+https://bldka-cyaaa-aaaah-aaq3a-cai.raw.ic0.app/
 ### To Do
 
 - create a package branch   "main": "./dist/index.js",
