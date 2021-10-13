@@ -11,7 +11,6 @@ type ProductStore = BTreeMap<String, Product>;
 #[derive(Clone, Debug, Default, CandidType, Deserialize)]
 struct Product {
     pub name: String,
-    pub brand: String,
     pub description: String,
     pub price: f32,
     pub quantity: i32
