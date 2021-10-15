@@ -1,6 +1,8 @@
 import { hello } from "../.dfx/local/canisters/hello";
 import * as React from "react";
 import { render } from "react-dom";
+import { nanoid } from 'nanoid'
+
 
 const MyHello = () => {
     const [name, setName] = React.useState('');
@@ -12,59 +14,39 @@ const MyHello = () => {
     const [keywords, setKeywords] = React.useState([])
 
     async function doGreet() {
-        const greeting = await hello.leaving(name);
+        // const greeting = await hello.leaving(name);
+        //
+        //
+        // console.log(greeting)
+
+         const getProduct = await hello.get_products( );
+
+        const _product = {
+          name: "shirt",
+          description: "plain white shirt",
+          brand: "sauveur",
+            price: 100.00,
+            quantity:2,
+            metadata:""
+        }
+
+        const id  = nanoid()
+        console.log('product id',id)
+        const setProduct = await hello.update_product(id,_product)
 
 
-        console.log(greeting)
 
-        // const getProfile = await hello.get("0815206804");
+        console.log("the profile in the store",getProduct)
+        console.log("the response after storing",setProduct)
 
-        // const _profile = {
-        //   name: name,
-        //   description: desc,
-        //   keywords: []
-        // }
-
-        // const setProfile = await hello.update(number,_profile)
-
-
-        // console.log("the profile in the store",getProfile)
-        // console.log("the response after storing",setProfile)
-
-         setMessage(greeting);
+         // setMessage(greeting);
     }
 
     return (
-        <div style={{ "fontSize": "30px" }}>
-            <div className="w-full h-32 p-2 bg-gray-100" >
-                <p>Greetings, from DFINITY!</p>
-                <p>
-                    {" "}
-                    Type your message in the Name input field, then click{" "}
-                    <b> Get Greeting</b> to display the result.
-                </p>
-            </div>
-            <div style={{ margin: "30px" }}>
+        <div className={"bg-black w-screen h-screen"}>
 
-                <input
-                    placeholder="number"
-                    id="number"
-                    value={number}
-                    onChange={(ev) => setNumber(ev.target.value)}
-                ></input>
-                <input
-                    placeholder="name"
-                    id="name"
-                    value={name}
-                    onChange={(ev) => setName(ev.target.value)}
-                ></input>
-
-                <input id="desc" value={desc} onChange={(ev) => setDesc(ev.target.value)} placeholder="Description"></input>
-                <button onClick={doGreet}>Get Greeting!</button>
-            </div>
-            <div>
-                Greeting is: "
-                <span style={{ color: "blue" }}>{message}</span>"
+            <div className={"w-32 h-32 bg-white"} onClick={() => doGreet()}>
+                click me
             </div>
         </div>
     );

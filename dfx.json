@@ -1,9 +1,9 @@
 {
   "canisters": {
     "hello": {
-      "build": "cargo build --target wasm32-unknown-unknown --package hello --release",
+      "build": "sudo ./generate-wasm.sh hello",
       "candid": "backend/src/hello.did",
-      "wasm": "target/wasm32-unknown-unknown/release/hello.wasm",
+      "wasm": "target/wasm32-unknown-unknown/release/hello-opt.wasm",
       "type": "custom"
     },
     "hello_assets": {
