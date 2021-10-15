@@ -1,12 +1,13 @@
 {
   "name": "@codebenderhq/canvas",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "repository": "git://github.com/codebenderhq/canvas.git",
   "description": "Building the present has never been easier",
+  "source": "./src/index.js",
   "main": "./dist/index.js",
   "scripts": {
     "start": " parcel index.html",
-    "build": "parcel build"
+    "build": " parcel build"
   },
   "author": "Rawk",
   "license": "MPL-2.0",
