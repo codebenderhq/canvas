@@ -16,7 +16,11 @@ node_modules
 
 target/
 
-.env
 .env.development
 
 Cargo.lock
+
+.dfx
+generate-wasm.sh
+/backend
+dfx.json
