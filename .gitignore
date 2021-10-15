@@ -19,3 +19,7 @@ target/
 .env.development
 
 Cargo.lock
+
+.dfx
+generate-wasm.sh
+/backend
