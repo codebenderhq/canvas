@@ -24,3 +24,7 @@ Cargo.lock
 generate-wasm.sh
 /backend
 dfx.json
+canister_ids.json
+Cargo.toml
+.proxyrc.web3
+.proxyrc.web2
