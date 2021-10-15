@@ -1,8 +1,8 @@
 {
-  "name": "@codebenderhq/canvas",
+  "name": "Sauveur",
   "version": "0.1.2",
   "repository": "git://github.com/codebenderhq/canvas.git",
-  "description": "Building the present has never been easier",
+  "description": "The App Store of small businesses",
   "source": "./src/index.js",
   "scripts": {
     "start": "  parcel index.html",
