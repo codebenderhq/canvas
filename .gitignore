@@ -3,7 +3,7 @@ node_modules
 .idea
 .parcel-cache
 /canvas.iml
-/dist/
+/src/
 
 
 
