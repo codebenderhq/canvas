@@ -17,6 +17,7 @@
 Have a .npmrc file with the following inside
 
 ```bash
+//npm.pkg.github.com/:_authToken=PesonalAccessToken
 @codebenderhq:registry=https://npm.pkg.github.com
 ```
 

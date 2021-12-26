@@ -1,0 +1,10 @@
+
+@tailwind base;
+@tailwind components;
+
+input {
+    @apply outline-none
+}
+@tailwind utilities;
+
+

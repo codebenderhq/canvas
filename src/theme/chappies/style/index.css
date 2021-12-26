@@ -1,0 +1,17 @@
+@font-face {
+  font-family: chappiesRegular;
+  src: url(../assets/fonts/Regular.ttf);
+}
+
+@font-face {
+  font-family: chappiesBold;
+  src: url(../assets/fonts/Bold.ttf);
+  font-weight: bold;
+}
+
+.font-chappies-regular {
+  font-family: chappiesRegular, sans-serif;
+}
+.font-chappies-bold {
+  font-family: chappiesBold, sans-serif;
+}
