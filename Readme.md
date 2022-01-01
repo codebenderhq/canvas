@@ -26,7 +26,7 @@ Have a .npmrc file with the following inside
 the canvas project itself installed like so, note the latest version [here](https://github.com/codebenderhq/canvas/packages/1006868)
 
 ```bash
-npm install @codebenderhq/canvas@0.1.1
+npm install @codebenderhq/sdk@0.1.1
 ```
 
 you will need to have tailwindcss installed on your local project for the components to work
@@ -62,7 +62,7 @@ This is still in development so the imports are limited
 when working with tailwindcss you need to include tailwind into your [CSS](https://tailwindcss.com/docs/installation#include-tailwind-in-your-css) , import the below in your root js file to include the CSS in your project
 
 ```bash
-@codebenderhq/canvas/src/theme/{themeName}/style/index.css
+@codebenderhq/sdk/src/theme/{themeName}/style/index.css
 ```
 
 if there are some custom components you would like to use private to you you can create your own CSS file including tailwindcss like [so](https://tailwindcss.com/docs/installation#include-tailwind-in-your-css) 
