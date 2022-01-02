@@ -1,8 +1,10 @@
 require("./index.css");
 var $cMI0G$reactjsxruntime = require("react/jsx-runtime");
-var $cMI0G$reactrouterdom = require("react-router-dom");
 var $cMI0G$react = require("react");
+var $cMI0G$reactrouterdom = require("react-router-dom");
 var $cMI0G$reactdom = require("react-dom");
+var $cMI0G$faunadb = require("faunadb");
+var $cMI0G$jstemporalpolyfill = require("@js-temporal/polyfill");
 
 function $parcel$export(e, n, v, s) {
   Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
@@ -14,6 +16,7 @@ function $parcel$interopDefault(a) {
 $parcel$export(module.exports, "Sauveur", () => $45151204656f70f4$export$2e2bcd8739ae039);
 $parcel$export(module.exports, "Chappies", () => $5f265d9b4ec838b4$export$2e2bcd8739ae039);
 $parcel$export(module.exports, "Services", () => $e2dd7711505ea4d7$export$2e2bcd8739ae039);
+$parcel$export(module.exports, "API", () => $302fbcedec8ad5f4$export$2e2bcd8739ae039);
 
 const $d973d9c7f46c0c79$var$splash = ({ theme: theme = "black"  })=>{
     return(/*#__PURE__*/ $cMI0G$reactjsxruntime.jsx("div", {
@@ -442,9 +445,103 @@ var $04285862c22f73b7$export$2e2bcd8739ae039 = {
 };
 
 
+
+let $d83e3129e2532a42$var$q = $cMI0G$faunadb.query;
+const $d83e3129e2532a42$var$faunaSDK = new $cMI0G$faunadb.Client({
+    secret: 'fnAEbszNIGACTHJLDOzFvk2Sw9JBJYXTZQNlHA6E',
+    domain: 'db.fauna.com',
+    // NOTE: Use the correct domain for your database's Region Group.
+    port: 443,
+    scheme: 'https'
+});
+//add trycatch for devesive coding
+const $d83e3129e2532a42$var$create = async (data, col)=>{
+    return await $d83e3129e2532a42$var$faunaSDK.query($d83e3129e2532a42$var$q.Create($d83e3129e2532a42$var$q.Collection(col), {
+        data: data
+    }));
+};
+const $d83e3129e2532a42$var$read = async (id, col = "theplug")=>{
+    //console.log("id tp read",id)
+    return await $d83e3129e2532a42$var$faunaSDK.query($d83e3129e2532a42$var$q.Get($d83e3129e2532a42$var$q.Ref($d83e3129e2532a42$var$q.Collection(col), id)));
+};
+const $d83e3129e2532a42$var$update = async (data, id, col)=>{
+    return await $d83e3129e2532a42$var$faunaSDK.query($d83e3129e2532a42$var$q.Update($d83e3129e2532a42$var$q.Ref($d83e3129e2532a42$var$q.Collection(col), id), {
+        data: data
+    }));
+};
+const $d83e3129e2532a42$var$remove = async (id, col = "theplug")=>{
+    console.log("removing the data", id);
+    return await $d83e3129e2532a42$var$faunaSDK.query($d83e3129e2532a42$var$q.Delete($d83e3129e2532a42$var$q.Ref($d83e3129e2532a42$var$q.Collection(col), id)));
+};
+const $d83e3129e2532a42$var$findById = async (id, index = "identity")=>{
+    return await $d83e3129e2532a42$var$faunaSDK.query($d83e3129e2532a42$var$q.Get($d83e3129e2532a42$var$q.Match($d83e3129e2532a42$var$q.Index(index), id)));
+};
+const $d83e3129e2532a42$var$findByIndex = async (id, index = "analyticIdentity ")=>{
+    let result = await $d83e3129e2532a42$var$faunaSDK.query($d83e3129e2532a42$var$q.Paginate($d83e3129e2532a42$var$q.Match($d83e3129e2532a42$var$q.Index(index), id)));
+    let exp = result.data.map((i)=>$d83e3129e2532a42$var$q.Get(i)
+    );
+    let data = await $d83e3129e2532a42$var$faunaSDK.query(exp);
+    return data;
+};
+const $d83e3129e2532a42$var$getAll = async (index = "genus")=>{
+    let result = await $d83e3129e2532a42$var$faunaSDK.query($d83e3129e2532a42$var$q.Paginate($d83e3129e2532a42$var$q.Documents($d83e3129e2532a42$var$q.Collection(index))));
+    let exp = result.data.map((i)=>$d83e3129e2532a42$var$q.Get(i)
+    );
+    let data = await $d83e3129e2532a42$var$faunaSDK.query(exp);
+    return data;
+};
+var $d83e3129e2532a42$export$2e2bcd8739ae039 = {
+    create: $d83e3129e2532a42$var$create,
+    update: $d83e3129e2532a42$var$update,
+    getAll: $d83e3129e2532a42$var$getAll,
+    read: $d83e3129e2532a42$var$read,
+    remove: $d83e3129e2532a42$var$remove,
+    findById: $d83e3129e2532a42$var$findById,
+    findByIndex: $d83e3129e2532a42$var$findByIndex
+};
+
+
 var $e2dd7711505ea4d7$export$2e2bcd8739ae039 = {
     NativeService: $035a6af011aefcfe$export$2e2bcd8739ae039,
-    SystemService: $04285862c22f73b7$export$2e2bcd8739ae039
+    SystemService: $04285862c22f73b7$export$2e2bcd8739ae039,
+    FaunaService: $d83e3129e2532a42$export$2e2bcd8739ae039
+};
+
+
+
+const $45ada8671b12cfe0$export$d395cf2f8c1b1775 = (id, domain, timezone, page, referer)=>{
+    return {
+        id: id,
+        type: 'page',
+        domain: domain,
+        timezone: timezone,
+        page: page,
+        referer: referer
+    };
+};
+const $45ada8671b12cfe0$export$a68cf31a3bee210c = (id, domain, timezone, page, action)=>{
+    return {
+        id: id,
+        type: 'action',
+        domain: domain,
+        timezone: timezone,
+        page: page,
+        action: action
+    };
+};
+
+
+
+const $9f598ce43b4c11bb$var$initAnalytics = async (id, domain, page, referer)=>{
+    return await $d83e3129e2532a42$export$2e2bcd8739ae039.create($45ada8671b12cfe0$export$d395cf2f8c1b1775(id, domain, $cMI0G$jstemporalpolyfill.Temporal.Now.timeZone().toJSON(), page, referer), 'analytics');
+};
+var $9f598ce43b4c11bb$export$2e2bcd8739ae039 = {
+    initAnalytics: $9f598ce43b4c11bb$var$initAnalytics
+};
+
+
+var $302fbcedec8ad5f4$export$2e2bcd8739ae039 = {
+    AnalyticsAPI: $9f598ce43b4c11bb$export$2e2bcd8739ae039
 };
 
 
